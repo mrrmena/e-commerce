@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-commerce", "e-commerce\e-commerce.csproj", "{67A655D0-F4A1-46BB-9FC0-D2B3D8A02E30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-commerce.Host", "e-commerce\e-commerce.Host.csproj", "{67A655D0-F4A1-46BB-9FC0-D2B3D8A02E30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-commerce.Models", "e-commerce.Models\e-commerce.Models.csproj", "{DCC73F2E-A8CD-47A9-940C-8D28B63F69F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-commerce.Data", "e-commerce.Models\e-commerce.Data.csproj", "{DCC73F2E-A8CD-47A9-940C-8D28B63F69F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-commerce.Business", "e-commerce.Business\e-commerce.Business.csproj", "{D8A6DEE7-D0D2-4491-8DCA-03F15D46E743}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-commerce.Structure", "e-commerce.Structure\e-commerce.Structure.csproj", "{9E1CEFE2-9C1A-407A-8D78-0D43F6BC5D44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-commerce.UNIT", "e-commerce.UNIT\e-commerce.UNIT.csproj", "{662A46BA-F394-47D8-911A-4CC70A220DB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-commerce.Test", "e-commerce.UNIT\e-commerce.Test.csproj", "{662A46BA-F394-47D8-911A-4CC70A220DB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

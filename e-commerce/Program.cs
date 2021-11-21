@@ -1,18 +1,19 @@
 ﻿using e_commerce.Business.Processors;
 using System;
 
-namespace e_commerce
+namespace e_commerce.Host
 {
     class Program
     {
         static void Main(string[] args)
         {
             Dispatcher dispatcher;
+            string command;
             while (true)
             {
                 try
                 {
-                    string command = Console.ReadLine();
+                    command = args.Length > 0 ? args[0] : Console.ReadLine();
                     dispatcher = new Dispatcher(command);
                     Console.WriteLine(dispatcher.return_command);
                 }

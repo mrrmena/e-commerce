@@ -9,6 +9,5 @@ namespace e_commerce.Structure
     public abstract class Storable : IStorable
     {
         public string key { get; set; }
-        public string created_comand { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace e_commerce.Models.Model
+namespace e_commerce.Data.Model
 {
     public class Campaign : Storable
     {
@@ -14,7 +14,10 @@ namespace e_commerce.Models.Model
         public int duration { get; set; }
         public double price_limit { get; set; }
         public double target_sales { get; set; }
-        public CampaignStatus CampaignStatus { get; set; }
+        public CampaignStatus status { get; set; }
+        public double total_sales { get; set; }
+        public double avg_item_price { get; set; }
+        public double last_sales { get; set; }
 
         public Campaign(string [] objectArray)
         {
@@ -24,12 +27,10 @@ namespace e_commerce.Models.Model
             duration = Convert.ToInt32(objectArray[3]);
             price_limit = Convert.ToDouble(objectArray[4]);
             target_sales = Convert.ToDouble(objectArray[5]);
-            CampaignStatus = new CampaignStatus();
-            CampaignStatus.status = "Active";
-            CampaignStatus.avg_item_price = 0;
-            CampaignStatus.total_sales = 0;
-            CampaignStatus.last_sales = 0;
-            created_comand = $"Campaign created; name {name}, product {product_code}, duration {duration}, limit {price_limit}, target sales count {target_sales}";
+            status = CampaignStatus.Active;
+            avg_item_price = 0;
+            total_sales = 0;
+            last_sales = 0;
         }
     }
 }

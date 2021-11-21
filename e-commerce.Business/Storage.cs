@@ -1,4 +1,4 @@
-﻿using e_commerce.Models.Model;
+﻿using e_commerce.Data.Model;
 using e_commerce.Structure;
 using System;
 using System.Collections.Generic;
@@ -46,12 +46,12 @@ namespace e_commerce.Business
         {
             foreach (Campaign storage_item in DataStoreage["campaign"].Values)
             {
-                Products products = Storage.DataStoreage["product"][storage_item.product_code] as Products;
+                Product products = Storage.DataStoreage["product"][storage_item.product_code] as Product;
                 if ((Helper.Time - Helper.Time0).Days > storage_item.duration)
                 {
-                    storage_item.CampaignStatus.status = "Ended";
+                    storage_item.status = CampaignStatus.Ended;
                 }
-                if (storage_item.CampaignStatus.status.Equals("Active") && storage_item.CampaignStatus.last_sales == 0)
+                if (storage_item.status==CampaignStatus.Active && storage_item.last_sales == 0)
                 {
                     if (products.first_price * storage_item.price_limit / 100  == products.price)
                     {
@@ -62,20 +62,20 @@ namespace e_commerce.Business
                     products.price = products.price - 5;
                     Storage.DataStoreage["product"][storage_item.product_code] = products;
                 }
-                storage_item.CampaignStatus.last_sales = 0;
+                storage_item.last_sales = 0;
             }
         }
 
-        public static void EffectToCampaign(Orders storable)
+        public static void EffectToCampaign(Order storable)
         {
             try
             {
 
                 Campaign campaign = Storage.DataStoreage["campaign"][storable.product_code] as Campaign;
-                Products products = Storage.DataStoreage["product"][storable.product_code] as Products;
-                campaign.CampaignStatus.last_sales = storable.quantity;
-                campaign.CampaignStatus.avg_item_price = (campaign.CampaignStatus.avg_item_price * campaign.CampaignStatus.total_sales + products.price * storable.quantity) / (storable.quantity + campaign.CampaignStatus.total_sales);
-                campaign.CampaignStatus.total_sales += storable.quantity;
+                Product products = Storage.DataStoreage["product"][storable.product_code] as Product;
+                campaign.last_sales = storable.quantity;
+                campaign.avg_item_price = (campaign.avg_item_price * campaign.total_sales + products.price * storable.quantity) / (storable.quantity + campaign.total_sales);
+                campaign.total_sales += storable.quantity;
                 Storage.DataStoreage["campaign"][storable.product_code] = campaign;
             }
             catch (Exception ex)
