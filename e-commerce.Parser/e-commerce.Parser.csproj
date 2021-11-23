@@ -1,15 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>e_commerce</RootNamespace>
+    <RootNamespace>e_commerce.Parser</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\e-commerce.Business\e-commerce.Business.csproj" />
-    <ProjectReference Include="..\e-commerce.Parser\e-commerce.Parser.csproj" />
-    <ProjectReference Include="..\e-commerce.UNIT\e-commerce.Test.csproj" />
+    <ProjectReference Include="..\e-commerce.Models\e-commerce.Data.csproj" />
   </ItemGroup>
 
 </Project>

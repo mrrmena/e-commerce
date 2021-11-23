@@ -2,11 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>e_commerce.Models</RootNamespace>
+    <RootNamespace>e_commerce.Data</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\e-commerce.Structure\e-commerce.Structure.csproj" />
-  </ItemGroup>
 
 </Project>
